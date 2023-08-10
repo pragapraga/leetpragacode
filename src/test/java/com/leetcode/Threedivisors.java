@@ -21,11 +21,27 @@ Psuedo Code
 package com.leetcode;
 import org.junit.Test;
 
+import org.junit.Assert;
+
 public class Threedivisors{
 	
 	@Test
 	public void testOne() {
+	Assert.assertEquals(isThree(1), false);
+	}
+	@Test
+	public void testTwo() {
+	Assert.assertEquals(isThree(4), true);
+	}
 	
+	@Test
+	public void testThree() {
+	Assert.assertEquals(isThree(5), false);
+	}
+	
+	@Test
+	public void testFour() {
+	Assert.assertEquals(isThree(10), false);
 	}
 	
 	
