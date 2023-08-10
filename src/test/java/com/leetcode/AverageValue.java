@@ -15,7 +15,7 @@ public class AverageValue {
 	Psudeo Code
 	1. Iterate the integer array, initialize the sum =0
 	2. Check if the number is divisble by 2 and check if the number is divisble by 3
-	2.1 Add them if 2 satisfied
+	2.1 Add them if 2 satisfied 
 	2.2 return the sum
 
 	*/
