@@ -9,9 +9,9 @@ import org.junit.Test;
 @input - int
 @output - int
 
-Testdata 1 - 7 
-Testdata 2 - 
-Testdata 3 - 
+Testdata 1 - 3 output =3 
+Testdata 2 - 10 output =40
+Testdata 3 - 9 output =30
 
 Psuedo Code
 1. Declare i , sum = 0 , 
@@ -40,6 +40,10 @@ public class SumMultiple {
 	@Test
 	public void testDataTwo() {
 		Assert.assertEquals(sumOfMultiples(10), 40);
+	}
+	@Test
+	public void testDataThree() {
+		Assert.assertEquals(sumOfMultiples(9), 30);
 	}
 
 
