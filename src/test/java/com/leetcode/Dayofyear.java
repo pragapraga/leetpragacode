@@ -19,7 +19,7 @@ public class Dayofyear {
 
 	@Test
 	public void testThree() {
-		Assert.assertEquals(findDayYear("2000-12-31"), 366);
+		Assert.assertEquals(findDayYear("1900-05-02"), 122);
 	}
 
 	public int findDayYear(String inputDate) {
@@ -31,7 +31,8 @@ public class Dayofyear {
 
 		int[] days = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		int sumOfDays = 0;
-		boolean isLeap = ((year % 400 == 0 || (year % 4 == 0)) ? true : false);
+		boolean isLeap = checkLeap(year);
+
 		for (int i = 0; i < month - 1; i++) {
 
 			if ((isLeap) && (i == 1)) {
@@ -43,4 +44,14 @@ public class Dayofyear {
 		return sumOfDays + day;
 	}
 
+	boolean checkLeap(int yr) {
+		if (yr % 100 == 0) {
+			if (yr % 400 == 0) {
+				return true;
+			}
+		}else if (yr % 4 == 0) {
+			return true;
+		}
+		return false;
+	}
 }

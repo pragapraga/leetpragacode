@@ -1,0 +1,23 @@
+public class Spynumber{
+public boolean isSpy(int num){
+ArrayList<Integer> iDigits = new ArrayList<Integer>();
+int reminder, sum=0,product=1;
+Boolean flag=true;
+while(num!=0){
+reminder = num%10;
+iDigits.add(reminder);
+num = num/10;
+}
+
+for(int I=0;i<iDigits.size();I++){
+sum+=iDigits.get(I);
+product*=iDigits.get(I);
+}
+
+if(sum!=product) {
+Return !flag;
+}
+Return flag;
+
+}
+}
