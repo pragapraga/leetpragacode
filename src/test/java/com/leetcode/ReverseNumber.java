@@ -56,7 +56,7 @@ public class ReverseNumber {
         int inputNumber = 2021;
         int fReverision = reverseNumber(inputNumber);
         int sReversion = reverseNumber(fReverision);
-        Assert.assertEquals(finalCheck(inputNumber, sReversion), true);
+        Assert.assertTrue(finalCheck(inputNumber, sReversion));
     }
 
     @Test
@@ -64,6 +64,6 @@ public class ReverseNumber {
         int inputNumber = 12300;
         int fReverision = reverseNumber(inputNumber);
         int sReversion = reverseNumber(fReverision);
-        Assert.assertEquals(finalCheck(inputNumber, sReversion), false);
+        Assert.assertFalse(finalCheck(inputNumber, sReversion));
     }
 }
