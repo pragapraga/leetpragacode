@@ -1,14 +1,11 @@
 package com.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Jars {
     int sum=0;
     public static void main(String[] args){
-        int n=5;
+        /*int n=5;
         int[] jars = new int[n];
         Arrays.fill(jars,0);
         List<List<Integer>> operations = new ArrayList<>();;
@@ -33,11 +30,25 @@ public class Jars {
         HashMap<Integer,Integer> mappy = new HashMap<Integer,Integer>();
 
         for(int i=0; i<operations.size();i++){
-            if(mappy.containsKey())
+
+        }*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Total Number of Jars ");
+        int totalNoOfJars = sc.nextInt();
+        System.out.println("Enter Total Number of Operations to be performed ");
+        int totalOperations = sc.nextInt();
+        long total = 0;
+        for (int i = 0; i < totalOperations; i++) {
+            System.out.println("Enter start Index for Operation"+(i+1));
+            int a = sc.nextInt();
+            System.out.println("Enter end Index for Operation"+(i+1));
+            int b = sc.nextInt();
+            System.out.println("Enter chocolates to be filled  in jar "+(i+1));
+            int k = sc.nextInt();
+            total += (b - a + 1L) * k;
         }
-
-
-
-
+        System.out.println(total / totalNoOfJars);
+        sc.close();
     }
 }

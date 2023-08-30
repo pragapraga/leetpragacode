@@ -15,7 +15,14 @@ Psuedo Code
  */
 public class HandShake {
     public int Solution(int folks) {
-       return folks*(folks-1)/2;
+      // return folks*(folks-1)/2;
+        int count=0;
+        for(int i=0;i<folks;i++){
+            for (int j = i+1; j < folks; j++) {
+                    count++;
+            }
+        }
+        return count;
     }
 
     @Test
