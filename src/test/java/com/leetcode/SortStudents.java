@@ -25,9 +25,24 @@ class Student {
     public double getCgpa() {
         return cgpa;
     }
+
+   /*@Override
+    public int compare(List<Student>) {
+
+
+        if(s1.getCgpa()!=s2.getCgpa()){
+            return Double.compare(s1.getCgpa(),s2.getCgpa());
+        }
+        else if(!s1.getFname().equals(s2.getFname())){
+            return s1.getFname().compareTo(s2.getFname());
+        }
+        else{
+            return Integer.compare(s1.getId(),s2.getId());
+        }
+    }*/
 }
 
-/*class SortStudent implements Comparator<Student>{
+class SortStudent implements Comparator<Student>{
 
     @Override
     public int compare(Student s1, Student s2) {
@@ -41,7 +56,7 @@ class Student {
             return Integer.compare(s1.getId(),s2.getId());
         }
     }
-}*/
+}
 public class SortStudents {
     public static void main(String[] args) {
         System.out.println("Enter total Number of Students");
@@ -61,7 +76,9 @@ public class SortStudents {
             testCases--;
         }
 
-        studentList.sort(new Comparator<Student>() {
+        Collections.sort(studentList,new SortStudent());
+
+       /* studentList.sort(new Comparator<Student>() {
             public int compare(Student s1, Student s2) {
                 if (s2.getCgpa() != s1.getCgpa()) {
                     return Double.compare(s2.getCgpa(), s1.getCgpa());
@@ -71,7 +88,7 @@ public class SortStudents {
                     return Integer.compare(s1.getId(), s2.getId());
                 }
             }
-        });
+        });*/
         for (Student st : studentList) {
             System.out.println(st.getFname());
         }
