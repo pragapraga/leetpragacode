@@ -37,7 +37,7 @@ public class Duplicate {
 
 
     @Test
-    public void testme(){
+    public void testOne(){
         int[] inputArray = new int[]{1, 3, 4, 2, 2};
         Assert.assertEquals(findDuplicate(inputArray),2);
     }
@@ -45,8 +45,8 @@ public class Duplicate {
 
     @Test
     public void testTwo(){
-        int[] inputArray = new int[]{1, 3, 4, 2, 8, 9};
-        Assert.assertEquals(findDuplicate(inputArray),2);
+        int[] inputArray = new int[]{1, 3, 4, 2, 8, 9, 9};
+        Assert.assertEquals(findDuplicate(inputArray),9);
     }
   /*  public static int findDuplicate(ArrayList<Integer> arr, int n){
         HashMap<Integer> mappy = new HashMap<Integer>();

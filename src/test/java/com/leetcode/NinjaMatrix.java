@@ -18,12 +18,14 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class NinjaMatrix {
 
 
     //public void matrixNinja(int[][] mat) {
-    public ArrayList<Integer> matrixNinja(int[][] mat) {
+    public List<Integer> matrixNinja(int[][] mat) {
         //int[][] mat = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         //int[][] mat = new int[][]{{1,2},{5,6}};
         ArrayList<Integer> arr = new ArrayList<>();
@@ -50,7 +52,22 @@ public class NinjaMatrix {
     public void testme() {
         int[][] mat = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int[] res = new int[]{1, 2, 3, 6, 5, 4, 7, 8, 9};
-        Assert.assertEquals(matrixNinja(mat), Arrays.asList(res));
+        List<Integer> listres = new ArrayList<>();
+        listres.add(1);listres.add(2);listres.add(3);listres.add(6);listres.add(5);listres.add(4);listres.add(7);listres.add(8);listres.add(9);
+        List<Integer> listarr = new ArrayList<>();
+        listarr = matrixNinja(mat);
+        Assert.assertEquals(listarr,listres);
+    }
+
+    @Test
+    public void testMeAgain() {
+        int[][] mat = new int[][]{{1, 2}, {4, 5}};
+        int[] res = new int[]{1, 2, 5, 4};
+        List<Integer> listres = new ArrayList<>();
+        listres.add(1);listres.add(2);listres.add(5);listres.add(4);
+        List<Integer> listarr = new ArrayList<>();
+        listarr = matrixNinja(mat);
+        Assert.assertEquals(listarr,listres);
     }
 }
 
