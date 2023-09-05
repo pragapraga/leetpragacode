@@ -27,28 +27,31 @@ public class LargestElement {
     public int findLargest(int[] arr) {
         int max = Integer.MIN_VALUE;
 
-        if(arr.length==1){
+        if (arr.length == 1) {
             return arr[0];
         }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+        for (int j : arr) {
+            if (j > max) {
+                max = j;
             }
         }
         return max;
     }
 
     @Test
-    public void testOne(){
-        int[] arr  = new int[]{1,2,3};
-        Assert.assertEquals(findLargest(arr),3);
+    public void testOne() {
+        int[] arr = new int[]{1, 2, 3};
+        Assert.assertEquals(findLargest(arr), 3);
     }
 
     @Test
-    public void testTwo(){
-        int[] arr  = new int[]{1};
-        Assert.assertEquals(findLargest(arr),1);
+    public void testTwo() {
+        int[] arr = new int[]{1};
+        Assert.assertEquals(findLargest(arr), 1);
     }
-
-
+    @Test
+    public void testThree() {
+        int[] arr = new int[]{-1,-3,-33};
+        Assert.assertEquals(findLargest(arr), -1);
+    }
 }
