@@ -1,3 +1,5 @@
+package com.leetcode;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-/*
+package com.leetcode;/*
 
 2
 4 2
@@ -38,7 +38,7 @@ public class MinimizeDiff {
         int count = 0;
 
         for (int currentInteger : arr) {
-            if ((currentInteger - difference) > 0) {
+            if ((currentInteger - difference) >= 0) {
                 finalArr[count++] = currentInteger - difference;
             } else {
                 finalArr[count++] = currentInteger + difference;
@@ -85,4 +85,49 @@ public class MinimizeDiff {
         int difference = 2;
         Assert.assertEquals(findMinDiff(arr,difference),5);
     }
+
+    @Test
+    public void testThree(){
+        int[] arr = new int[]{10, 4, 20, 19, 9, 4, 20, 14, 15, 10, 9, 15, 8 };
+        // [1 13 11 10 0 13 11 ]
+        int difference = 9;
+        Assert.assertEquals(findMinDiff(arr,difference),5);
+    }
+    @Test
+    public void testFour(){
+        int[] arr = new int[]{1};
+        int difference = 2;
+        Assert.assertEquals(findMinDiff(arr,difference),0);
+    }
 }
+
+/*
+
+13 9
+10 4 20 19 9 4 20  14 15 10 9 15 8
+[1 13 11 10 0 13 11 5 6 1 0 6 17]
+
+
+
+17 7
+11 9 12 16 1 14 17 14 12 11 10 3 3 9 15 4 8
+[]
+
+
+18 5
+3 19 4 16 17 5 7 16 3 20 1 20 10 10 2 19 13 13
+
+17 7
+2 1 19 19 11 3 7 7 14 14 4 20 1 4 9 20 19
+
+
+10 7
+5 17 15 4 11 15 19 18 7 14
+
+14
+10
+9
+11
+10
+
+ */
