@@ -13,7 +13,8 @@ import java.io.*;
 
 Psuedo code
 1. Reverse the string, it is already a palindrome, return TRUE
-2. Check 1st index and last index is equal or not, if equal, proceed else remove the index which is least
+2.1 Appraoch 1 - Check 1st index and last index is equal or not, if equal, proceed else remove the index which is least
+2.2 Approach 2 - find the middle index and delete it, check the string reverse nature
 
 
 */
