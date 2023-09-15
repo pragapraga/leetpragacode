@@ -1,6 +1,11 @@
 package com.leetcode;
 
 import org.testng.annotations.Test;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /*
 @input - String, String
 @output - String
@@ -17,22 +22,36 @@ Psuedo Code
 
 */
 public class DecodeMessage {
-    public String decodeMessage(String key, String message) {
+    public String decodeMessage(String keyValue, String message) {
+        String atoz = "abcdefghijklmnopqrstuvwxyz";
         StringBuilder keyBuilder = new StringBuilder();
-        if (key.contains(" ")) {
-            String[] words = key.split(" ");
+        if (keyValue.contains(" ")) {
+            String[] words = keyValue.split(" ");
             for (String word : words) {
                 keyBuilder.append(word);
             }
         }
-        System.out.println(keyBuilder);
+        HashMap<Character, Character> mappy = new LinkedHashMap<>();
+        for (int i = 0; i < 26; i++) {
+            mappy.put(keyBuilder.toString().charAt(i), atoz.charAt(i));
+        }
+        mappy.forEach((key, value) -> System.out.println(key + " = " + value));
+
+        for (int i = 0; i < message.length(); i++) {
+            char currentCharater = message.charAt(i);
+            //message.replace(message.charAt(i),mappy.getOrDefault(message.charAt(i), " "));
+            message.replace(currentCharater, mappy.get(currentCharater));
+            System.out.println(message);
+        }
+
+
         return null;
     }
 
     @Test
-    public void testOne(){
+    public void testOne() {
         String key = "the quick brown fox jumps over the lazy dog";
         String message = "vkbs bs t suepuv";
-        decodeMessage(key,message);
+        decodeMessage(key, message);
     }
 }
