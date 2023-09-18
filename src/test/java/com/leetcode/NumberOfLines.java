@@ -41,7 +41,7 @@ public class NumberOfLines {
         for (int i = 0; i < input.length; i++) {
             sum += input[i];
 
-            if (sum ==100) {
+            if (sum <=100) {
                 saveLineWithChars(lineCounter++,sum);
                 sum=0;
             }
