@@ -19,7 +19,7 @@ Brute Force Psuedo code
 4. return commonCounter
 
 Time complexity - O[N^2]
-Space Complexity -
+Space Complexity - O[]
 //07:09
 
 07:24
@@ -28,13 +28,17 @@ Two Pointer Psuedo code
 2. Sort the array1 and array2
 3. Place 1st pointer in startIndex of array1 and 2nd pointer in startIndex of array2
 4. Compare both of them, if is common , increment commonCounter
+Time complexity - Nlog(N)
+Space Complexity - O(1)
 07:28
 
 07:56
 compareArrayAndCommonElementUsingHashset
 1. int commonCounter=0;
-2. Add element to Hashset
-3.
+2. Have pointer in array1 and array2
+3. Add element to Hashset if the add() returns false, increment commonCounter
+Time complexity - O(N)
+Space Complexity - O(N)
  */
 
 import org.testng.Assert;
