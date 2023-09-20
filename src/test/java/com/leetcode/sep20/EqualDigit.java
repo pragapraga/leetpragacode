@@ -35,6 +35,11 @@ public class EqualDigit {
         String num = "030";
         Assert.assertFalse(checkEquality(num));
     }
+    @Test
+    public void testThree(){
+        String num = "0";
+        Assert.assertFalse(checkEquality(num));
+    }
 
     private boolean checkEquality(String num) {
         char[] chars = num.toCharArray();
