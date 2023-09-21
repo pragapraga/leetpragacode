@@ -37,13 +37,13 @@ public class EqualDigit {
     }
     @Test
     public void testThree(){
-        String num = "0";
+        String num = "1";
         Assert.assertFalse(checkEquality(num));
     }
 
     private boolean checkEquality(String num) {
         char[] chars = num.toCharArray();
-
+        boolean flag = true;
         HashMap<String, Integer> mappy = new HashMap<>();
 
         for (int i = 0; i < chars.length; i++) {
@@ -61,10 +61,10 @@ public class EqualDigit {
             String currentValue = String.valueOf(mappy.get(String.valueOf(i)));
             if(mappy.get(String.valueOf(i))!=null){
                 if(!currentValue.equals(String.valueOf(num.charAt(i)))){
-                    return false;
+                    flag = false;
                 }
             }
         }
-        return true;
+        return flag;
     }
 }

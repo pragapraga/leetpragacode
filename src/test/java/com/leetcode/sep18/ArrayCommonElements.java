@@ -66,7 +66,7 @@ public class ArrayCommonElements {
     @Test
     public void testThree() {
         byte[] input1 = new byte[]{1, 2, 3, 4, 5, 6, 9};
-        byte[] input2 = new byte[]{3, 1, 2,4};
+        byte[] input2 = new byte[]{3, 1, 2, 4};
         Assert.assertEquals(compareArrayAndCommonElementUsingHashset(input1, input2), 4);
     }
 
@@ -120,15 +120,15 @@ public class ArrayCommonElements {
     private int compareArrayAndCommonElementUsingHashset(byte[] input1, byte[] input2) {
         //07:54
         int commonCounter = 0;
-        int firstPointer = 0, secondPointer=0;
+        int firstPointer = 0, secondPointer = 0;
         HashSet<Byte> hashSet = new HashSet<>();
 
-    while(firstPointer<input1.length && secondPointer<input2.length){
+        while (firstPointer < input1.length && secondPointer < input2.length) {
 
-        if(!hashSet.add(input1[firstPointer++])) commonCounter++;
-        if(!hashSet.add(input2[secondPointer++])) commonCounter++;
+            if (!hashSet.add(input1[firstPointer++])) commonCounter++;
+            if (!hashSet.add(input2[secondPointer++])) commonCounter++;
 
-    }
+        }
         return commonCounter;
     }
 }

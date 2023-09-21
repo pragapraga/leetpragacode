@@ -1,5 +1,6 @@
 package com.leetcode;
 
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -23,35 +24,32 @@ Psuedo Code
 */
 public class DecodeMessage {
     public String decodeMessage(String keyValue, String message) {
-        String atoz = "abcdefghijklmnopqrstuvwxyz";
-        StringBuilder keyBuilder = new StringBuilder();
-        if (keyValue.contains(" ")) {
-            String[] words = keyValue.split(" ");
-            for (String word : words) {
-                keyBuilder.append(word);
+        keyValue = keyValue.replace(" ", "");
+        HashMap<Character, Character> mappy = new LinkedHashMap<>();
+        char ch = 'a';
+        for (int i = 0; i < keyValue.length(); i++) {
+            if (!mappy.containsKey(keyValue.charAt(i))) {
+                mappy.put(keyValue.charAt(i), ch++);
             }
         }
-        HashMap<Character, Character> mappy = new LinkedHashMap<>();
-        for (int i = 0; i < 26; i++) {
-            mappy.put(keyBuilder.toString().charAt(i), atoz.charAt(i));
-        }
-        mappy.forEach((key, value) -> System.out.println(key + " = " + value));
-
+        StringBuilder finalString = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
-            char currentCharater = message.charAt(i);
-            //message.replace(message.charAt(i),mappy.getOrDefault(message.charAt(i), " "));
-            message.replace(currentCharater, mappy.get(currentCharater));
-            System.out.println(message);
+            if (mappy.get(message.charAt(i)) != null) finalString.append(mappy.get(message.charAt(i)));
+            else finalString.append(' ');
         }
-
-
-        return null;
+        return finalString.toString();
     }
 
     @Test
     public void testOne() {
         String key = "the quick brown fox jumps over the lazy dog";
         String message = "vkbs bs t suepuv";
-        decodeMessage(key, message);
+        Assert.assertEquals(decodeMessage(key, message),"this is a secret");
+    }
+    @Test
+    public void testTwo(){
+        String key = "eljuxhpwnyrdgtqkviszcfmabo";
+        String message = "zwx hnfx lqantp mnoeius ycgk vcnjrdb";
+        Assert.assertEquals(decodeMessage(key, message),"the five boxing wizards jump quickly");
     }
 }
