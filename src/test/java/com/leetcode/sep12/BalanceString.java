@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.sep12;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.sep12;
 
 /*
 https://leetcode.com/problems/number-of-lines-to-write-string/description/

@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.sep7;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;
