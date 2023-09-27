@@ -27,21 +27,20 @@ Brute Force Psuedo code
 public class ArrayConcat {
 
     @Test
-    public void test(){
-        int[] nums = new int[]{5,14,13,8,12};
-        Assert.assertEquals(findTheArrayConcVal(nums),673);
+    public void test() {
+        int[] nums = new int[]{5, 14, 13, 8, 12};
+        Assert.assertEquals(findTheArrayConcVal(nums), 673);
     }
 
     @Test
-    public void testOne(){
-        int[] nums = new int[]{7,52,2,4};
-        Assert.assertEquals(findTheArrayConcVal(nums),596);
+    public void testOne() {
+        int[] nums = new int[]{7, 52, 2, 4};
+        Assert.assertEquals(findTheArrayConcVal(nums), 596);
     }
 
     public long findTheArrayConcVal(int[] nums) {
         int sum = 0;
         List<Integer> list = new ArrayList<>();
-        boolean evenLengthFlag = nums.length % 2 != 0;
         for (int i = 0; i < nums.length / 2; i++) {
             System.out.println(i + "::" + nums[i] + nums[nums.length - i - 1]);
             String temp1 = String.valueOf(nums[i]);
@@ -50,14 +49,13 @@ public class ArrayConcat {
             int finalNum = Integer.parseInt(temp1 + temp2);
             list.add(finalNum);
         }
-        if(nums.length%2!=0){
-            list.add(nums[nums.length/2]);
+        if (nums.length % 2 != 0) {
+            list.add(nums[nums.length / 2]);
         }
-        //System.out.println(list);
         for (Integer i : list)
             sum += i;
-        //System.out.println(sum);
-
-    return sum;
+        return sum;
     }
 }
+
+
