@@ -24,9 +24,9 @@ public class SubSequenceSumIntegerTest {
         int leftPointer = 0;
         int rightPointer =0;
         for (int i = 0; i < intArr.length; i++) {
-            if((intArr[leftPointer]>k)&&min){
-
-            }
+//            if((intArr[leftPointer]>k)&&min){
+//
+//            }
         }
     }
 }
