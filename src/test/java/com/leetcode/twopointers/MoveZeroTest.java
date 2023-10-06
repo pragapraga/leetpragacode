@@ -23,7 +23,7 @@ Psuedo code
 
 
  */
-public class MoveZero {
+public class MoveZeroTest {
 
     @Test
     public void testOne() {

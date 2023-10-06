@@ -44,7 +44,7 @@ Psuedo Code:
 
  */
 
-public class Selfdividingnumber {
+public class SelfDividingNumberTest {
 
 	public List<Integer> isSelfDividing(int num) {
 		List<Integer> list = new ArrayList<Integer>();
@@ -102,6 +102,6 @@ public class Selfdividingnumber {
 	}
 	@Test
 	public void testFour() {
-		Assert.assertEquals(checkDivisibilityInRange(1, 22),Arrays.asList(48, 55, 66, 77));
+		Assert.assertEquals(checkDivisibilityInRange(47, 85),Arrays.asList(48, 55, 66, 77));
 	}
 }

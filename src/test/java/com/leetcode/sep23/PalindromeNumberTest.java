@@ -9,6 +9,11 @@ public class PalindromeNumberTest {
         int input = 123321;
         Assert.assertTrue(checkNumberPalindrome(input));
     }
+    @Test
+    public void testTwo(){
+        int input = -123321;
+        Assert.assertFalse(checkNumberPalindrome(input));
+    }
 
     private boolean checkNumberPalindrome(int input) {
         int originalNumber= input;

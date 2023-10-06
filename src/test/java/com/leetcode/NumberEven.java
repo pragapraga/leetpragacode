@@ -54,7 +54,7 @@ public class NumberEven {
         return list;
     }
 
-    public int digitSum(int digit) {
+    public int  digitSum(int digit) {
         int reminder, sum = 0;
         if (digit <=9) {
             return digit;
