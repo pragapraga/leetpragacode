@@ -5,14 +5,44 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
+
+/*
+1. Iterate the array, if the current digit is <9, increment it  else assign to 0
+2.
+
+ */
 public class PlusOneTest {
+
+    public int[] finePlusOneApproach1(int[] input){
+
+        for (int i = input.length-1; i >=0 ; i--) {
+            if(input[i]<9){
+                input[i]+=1;
+                return input;
+            }
+            input[i]=0;
+        }
+
+        int[] output = new int[input.length+1];
+        output[0]=1;
+        return output;
+
+    }
+
+
     @Test
     public void testcase1(){
         int[] input = new int[]{1,2,3};
         int[] output = new int[]{1,2,4};
-        Assert.assertEquals(findPlusOne(input),output);
+        Assert.assertEquals(finePlusOneApproach1(input),output);
     }
-
+    @Test
+    public void testcase2(){
+        int[] input = new int[]{9,9};
+        int[] output = new int[]{1,0,0};
+        Assert.assertEquals(finePlusOneApproach1(input),output);
+    }
+/*
     private int[] findPlusOne(int[] input) {
     int number=0;
         for (int n: input) {
@@ -35,5 +65,6 @@ public class PlusOneTest {
         return array;
 
     }
+ */
 
 }
