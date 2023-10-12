@@ -1,5 +1,7 @@
 package com.leetcode.oct10;
 
+import org.testng.annotations.Test;
+
 import java.util.Arrays;
 
 /*
@@ -42,5 +44,11 @@ public class SmallerThanCurrentNumberTest {
             result[i]=counter;
         }
         return result;
+    }
+
+    @Test
+    public void testcase1(){
+        int[] input = new int[]{6,5,4,8};
+
     }
 }

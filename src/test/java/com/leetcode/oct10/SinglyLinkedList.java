@@ -55,7 +55,7 @@ public class SinglyLinkedList {
     public void removeByIndex(int index){
         int counter=0;
         if(index>=size || index<0){
-            return ;
+            return;
         }
         else if(index==0){
             headNode = headNode.nextNode;
