@@ -18,12 +18,14 @@ Psuedoe code
 */
 public class ArrangingCoinsTest {
     public int arrangeCoins(int n) {
-        int i = 1; //minimum 1 step
+        int i = 1;//minimum 1 step
+        int completedSteps =0;
         while(n>0){
             i++;
+            completedSteps++;
             n = n - i;
         }
-        return i - 1;
+        return completedSteps;
     }
 
     @Test
