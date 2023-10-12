@@ -35,4 +35,9 @@ public class ArrangingCoinsTest {
     public void testcase2(){
         Assert.assertEquals(arrangeCoins(5),2);
     }
+
+    @Test
+    public void testcase3(){
+        Assert.assertEquals(arrangeCoins(0),0);
+    }
 }
