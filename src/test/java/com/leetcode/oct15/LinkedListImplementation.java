@@ -12,7 +12,7 @@ public class LinkedListImplementation {
     }
 
     Node head,tail;
-    public void addToTail(int value){
+    public void addAll(int value){
         Node newNode = new Node(value);
         if(head==null){
             head = newNode;
@@ -26,21 +26,22 @@ public class LinkedListImplementation {
         }
     }
 
+    public void addToTail(int value){
+        Node newNode = new Node(value);
+        if(head==null){
+            head = tail = newNode;
+        }
+        else{
+            tail.next = newNode;
+            tail = tail.next;
+        }
+    }
+
     public Node add(int[] value){
-        for(int each : value) addToTail(each);
+        for(int each : value) addAll(each);
         return head;
     }
 
-    public void addTailToExistingNode(int value, Node node){
-        Node current = head;
-        while(current!=null){
-            current = current.next;
-        }
-        if(current==null){
-
-        }
-
-    }
 
     public void display(){
         Node current = head;

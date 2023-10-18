@@ -1,8 +1,8 @@
-package com.leetcode.oct9;
+package com.leetcode.listnode;
 
 public class ListNode {
     int val;
-    ListNode next;
+    public ListNode next;
 
     ListNode() {
     }
