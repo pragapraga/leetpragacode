@@ -12,29 +12,29 @@ public class GreekLatinTest {
         Assert.assertEquals(toGoatLatin(input), output);
 
     }
+    StringBuilder result = new StringBuilder();
 
     public String toGoatLatin(String sentence) {
         String[] wordsArray = sentence.split(" ");
-        StringBuilder sbi = new StringBuilder();
-        StringBuilder result = new StringBuilder();
+        String res = "";
         for (int i = 0; i < wordsArray.length; i++) {
+            StringBuilder sbi = new StringBuilder();
             String currentWord = wordsArray[i];
             String finaString = "";
             if (isVowel(currentWord)) {
                 String vowel = sbi.append(vowel(currentWord)).toString();
-                String append = appenda(String.valueOf(vowel), i + 1);
-                result = sbi.append(" ");
-                finaString += finaString;
+                String append = appenda(vowel, i + 1)+" ";
+                //result = sbi.append(append);
             } else {
                 String conso = sbi.append(consonnat(currentWord)).toString();
-                String append = appenda(String.valueOf(conso), i + 1);
-                result = sbi.append(" ");
-                finaString += finaString;
+                String append = appenda(conso, i + 1)+ " ";
+                //result = sbi.append(append);
             }
-            result.append(finaString);
+            //result.append(sbi);
         }
         System.out.println(result);
-        return sbi.toString().trim();
+        //System.out.println(res);
+        return result.toString().trim();
     }
 
     public String appenda(String currentString, int iValue) {
@@ -42,7 +42,8 @@ public class GreekLatinTest {
         for (int i = 0; i < iValue; i++) {
             a.append("a");
         }
-        System.out.println(a);
+        System.out.println(currentString + a.toString());
+        result.append(currentString + a.toString()+ " ");
         return currentString + a.toString();
     }
 
