@@ -2,6 +2,7 @@ package com.leetcode.oct10;
 
 import com.leetcode.listnode.ListNode;
 import com.leetcode.listnode.ListNodeImpl;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -24,20 +25,22 @@ public class MiddleOfTheLinkedListTest {
     int[] input = new int[]{1,2,3,4,5};
         ListNodeImpl ll = new ListNodeImpl();
         ListNode head = ll.addAll(input);
-        searchMiddleOfTheLinkedList(head);
+        ListNode node = searchMiddleOfTheLinkedList(head);
+        Assert.assertEquals(node.val,3);
     }
     @Test
     public void testcase2 (){
     int[] input = new int[]{1,2,3,4,5,6};
         ListNodeImpl ll = new ListNodeImpl();
         ListNode head = ll.addAll(input);
-        searchMiddleOfTheLinkedList(head);
+        ListNode node = searchMiddleOfTheLinkedList(head);
+        Assert.assertEquals(node.val,4);
     }
 
     private ListNode searchMiddleOfTheLinkedList(ListNode head) {
         ListNode slowNode = head;
         ListNode fastNode = head;
-        while(fastNode!=null&&fastNode.next!=null){
+        while(fastNode.next!=null&&fastNode.next.next!=null){
             slowNode = slowNode.next;
             fastNode = fastNode.next.next;
         }
