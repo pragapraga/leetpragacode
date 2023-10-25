@@ -18,8 +18,8 @@ import org.testng.annotations.Test;
 
 public class SortAnIntegerArrayTest {
     public int[] sortAnArray(int[] input) {
-        for (int i = 0; i < input.length; i++) {
-            for (int j = i + 1; j <= input.length - 1; j++) {
+        for (int i = 0; i < input.length; i++) { //0,1,2,3,4
+            for (int j = i + 1; j <= input.length - 1; j++) { //1,2,3,4
                 if(input[i]>input[j]){
                     int temp = input[i];
                     input[i] =input[j];
