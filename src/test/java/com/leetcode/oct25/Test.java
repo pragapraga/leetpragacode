@@ -3,7 +3,9 @@ package com.leetcode.oct25;
 public class Test {
     public static void main(String[] args) {
         Test a = new Test();
-        System.out.println(a.appendaaa("Praga",5));
+        String str = "1s3 PSt";
+        System.out.println(str.replaceAll("[\\d\\s]","").toLowerCase());
+        //System.out.println(a.appendaaa("Praga",5));
         //System.out.println(a.consonnat("Praga"));
         //System.out.println(a.vowel("Apraga"));
         //System.out.println(a.isVowel("Apraga"));
