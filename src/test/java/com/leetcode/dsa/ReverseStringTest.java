@@ -1,7 +1,6 @@
 package com.leetcode.dsa;
 
 /*
-00:40
 @input - String
 @output - String
 
