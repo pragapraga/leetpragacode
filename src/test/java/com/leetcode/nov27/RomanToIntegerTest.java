@@ -30,7 +30,16 @@ public class RomanToIntegerTest {
         String input = "IX";
         Assert.assertEquals(romanToInt(input), 9);
     }
-
+    @Test
+    public void testcase2() {
+        String input = "XI";
+        Assert.assertEquals(romanToInt(input), 11);
+    }
+    @Test
+    public void testcase3() {
+        String input = "MCMXCIV";
+        Assert.assertEquals(romanToInt(input), 1994);
+    }
     public int romanToInt(String input) {
         HashMap<Character, Integer> romanToInt = new HashMap<>();
         romanToInt.put('I', 1);
